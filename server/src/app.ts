@@ -8,7 +8,20 @@ app.get('/health', (_, res) => {
 });
 
 app.get('/applications', (_, res) => {
-  res.json(jobApplicationMock);
-  res.status(200);
-  return res;
+  return res.status(200).json(jobApplicationMock);
+});
+
+app.get('/applications/:id', (req, res) => {
+  const { id } = req.params;
+  const application = jobApplicationMock.find((application) => {
+    return application.id === id;
+  });
+
+  if (application) {
+    return res.status(200).json(application);
+  }
+
+  return res.status(404).json({
+    error: 'Application not found',
+  });
 });

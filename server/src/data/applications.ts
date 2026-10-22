@@ -5,7 +5,7 @@ const date = new Date();
 
 export const jobApplicationMock: JobApplication[] = [
   {
-    id: randomUUID(),
+    id: '1',
     company: 'TestName1',
     title: 'SWE2',
     status: 'applied',
@@ -13,7 +13,7 @@ export const jobApplicationMock: JobApplication[] = [
     createdAt: date.toISOString(),
   },
   {
-    id: randomUUID(),
+    id: '2',
     company: 'TestName2',
     title: 'SWE2',
     status: 'applied',
